@@ -22,9 +22,9 @@ public class MineSweeper {
     {
         // TODO code application logic here
         MineGenerator generator = new MineGenerator();
-        generator.generateMineField(6, 4);
+        generator.generateMineField(4, 4);
         do {
-            generator.drawMineField(6, 4);
+            generator.drawMineField(4, 4);
             System.out.println("Mine?");
             String read = null;
             try 

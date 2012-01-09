@@ -65,6 +65,7 @@ public class MineField
     } 
     public void addObservers(int x,int y)
     {
+        System.out.println("x:"+x+",y:"+y);
         for(int i=0;i<x;i++)
         {
             ArrayList<Spot> mineRow = mines.get(i);
@@ -75,15 +76,19 @@ public class MineField
                 List<Spot> neighbouringEmptySpots;
                 if(mine.getClass()==MineSpot.class)
                 {
-                    int a = i-1;
-                    int b = j-1;
-                    if(a<0) a=0;
-                    if(b<0) b=0;
+                    int startingRow = i-1;
+                    int startingCol = j-1;
+                    int endingRow = i+1;
+                    int endingCol = j+1;
+                    if(startingRow<0) startingRow=0;
+                    if(startingCol<0) startingCol=0;
+                    if(endingRow>x) endingRow = x;
+                    if(endingCol>y) endingCol = y;
                     neighbouringMines = new ArrayList<Spot>();
-                    System.out.println(a+","+b);
-                    for(int c=a;c<=(i+1);c++)
+                    System.out.println("Start("+startingRow+","+startingCol+") End("+endingRow+","+endingCol+")"+i+","+j);
+                    for(int c=startingRow;c<endingRow;c++)
                     {
-                        for(int d=b;d<=(j+1);d++)
+                        for(int d=startingCol;d<endingCol;d++)
                         {
                             Spot spot = mines.get(c).get(d);
                             if(spot.getClass()==MineSpot.class)
@@ -98,15 +103,20 @@ public class MineField
                 }
                 else
                 {
-                    int a = i-1;
-                    int b = j-1;
-                    if(a<0) a=0;
-                    if(b<0) b=0;
-                    neighbouringMines = new ArrayList<Spot>();
+                    int startingRow = i-1;
+                    int startingCol = j-1;
+                    int endingRow = i+1;
+                    int endingCol = j+1;
+                    if(startingRow<0) startingRow=0;
+                    if(startingCol<0) startingCol=0;
+                    if(endingRow>x) endingRow = x;
+                    if(endingCol>y) endingCol = y;
                     neighbouringEmptySpots = new ArrayList<Spot>();
-                    for(int c=a;c<=(i+1);c++)
+                    neighbouringMines = new ArrayList<Spot>();
+                    System.out.println("Start("+startingRow+","+startingCol+") End("+endingRow+","+endingCol+")"+i+","+j);
+                    for(int c=startingRow;c<endingRow;c++)
                     {
-                        for(int d=b;d<=(j+1);d++)
+                        for(int d=startingCol;d<endingCol;d++)
                         {
                             Spot spot = mines.get(c).get(d);
                             if(spot.getClass()==MineSpot.class)
