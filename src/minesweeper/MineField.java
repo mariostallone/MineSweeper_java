@@ -122,6 +122,7 @@ public class MineField
                             if(spot.getClass()==MineSpot.class)
                             {
                                 neighbouringMines.add(spot);
+                                System.out.println("Added");
                             }
                             else
                             {

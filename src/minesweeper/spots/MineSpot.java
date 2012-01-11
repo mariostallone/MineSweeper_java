@@ -24,6 +24,7 @@ public class MineSpot extends Spot
     @Override
     public void update(Observable o, Object arg) {
         //throw new UnsupportedOperationException("Not supported yet.");
-        System.out.println(this.getPosition());
+        System.out.println("Mine"+this.getPosition());
+        this.setOpen(true);
     }
 }

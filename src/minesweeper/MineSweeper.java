@@ -39,6 +39,11 @@ public class MineSweeper {
             int j = Integer.parseInt(Character.toString(read.charAt(1)));
             Spot mine = generator.getMineField().getMines().get(i - 1).get(j - 1);
             mine.setOpen(true);
+            if(mine.isOpen())
+            {
+                System.out.println("Open");
+                System.out.println(mine);
+            }
         } while (true);
     }
 }

@@ -31,7 +31,7 @@ public abstract class Spot extends Observable implements Observer
     {
         setChanged();
         notifyObservers();
-        System.out.println("OPen");
+        System.out.println("Open");
         this.open = open;
     } 
 }

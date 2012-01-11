@@ -5,6 +5,7 @@
 package minesweeper;
 
 import java.util.ArrayList;
+import minesweeper.spots.EmptySpot;
 import minesweeper.spots.MineSpot;
 import minesweeper.spots.Spot;
 
@@ -40,11 +41,27 @@ public class MineGenerator
                 Spot mine = mineRow.get(j-1);
                 if(mine.getClass()==MineSpot.class)
                 {
-                    System.out.print("+   ");
+                    if(mine.isOpen())
+                    {
+                        System.out.print("B   ");
+                    }
+                    else
+                    {
+                        System.out.print("+   ");
+                    }
                 }
                 else
                 {
-                    System.out.print("*   ");
+                    if(mine.isOpen())
+                    {
+                        EmptySpot mineSpot = (EmptySpot)mine;
+                        //System.out.print("0   ");
+                        System.out.print(mineSpot.getNeighbouringMines().size()+"   ");
+                    }
+                    else
+                    {
+                        System.out.print("*   ");
+                    }
                 }
             }
             System.out.println();
