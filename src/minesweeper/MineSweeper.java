@@ -7,6 +7,7 @@ package minesweeper;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import minesweeper.spots.MineSpot;
 import minesweeper.spots.Spot;
 
 /**
@@ -43,6 +44,12 @@ public class MineSweeper {
             {
                 System.out.println("Open");
                 System.out.println(mine);
+            }
+            if(mine.getClass()==MineSpot.class)
+            {
+               generator.drawMineField(4, 4);
+               System.out.println("Game Over");
+               break;
             }
         } while (true);
     }

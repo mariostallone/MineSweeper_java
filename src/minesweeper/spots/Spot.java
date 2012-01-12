@@ -13,7 +13,7 @@ import java.util.Observer;
  */
 public abstract class Spot extends Observable implements Observer
 {
-    private boolean open;
+    protected boolean open;
     private Position position;
     public Position getPosition() 
     {
@@ -33,5 +33,5 @@ public abstract class Spot extends Observable implements Observer
         notifyObservers();
         System.out.println("Open");
         this.open = open;
-    } 
+    }
 }
