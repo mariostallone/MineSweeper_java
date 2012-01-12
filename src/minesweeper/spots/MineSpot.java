@@ -6,6 +6,7 @@ package minesweeper.spots;
 
 import java.util.List;
 import java.util.Observable;
+import minesweeper.Constants;
 
 /**
  *
@@ -24,7 +25,7 @@ public class MineSpot extends Spot
     @Override
     public void update(Observable o, Object arg) {
         //throw new UnsupportedOperationException("Not supported yet.");
-        System.out.println("Mine"+this.getPosition());
+        if(Constants.DEBUG==1) System.out.println("Mine"+this.getPosition());
         this.setBlasted();
     }
     public void setBlasted()

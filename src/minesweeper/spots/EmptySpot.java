@@ -6,6 +6,7 @@ package minesweeper.spots;
 
 import java.util.List;
 import java.util.Observable;
+import minesweeper.Constants;
 
 /**
  *
@@ -14,15 +15,6 @@ import java.util.Observable;
 public class EmptySpot extends Spot
 {
     List<Spot> neighbouringMines;
-    List<Spot> neighbouringEmptySpots;
-    public List<Spot> getNeighbouringEmptySpots() {
-        return neighbouringEmptySpots;
-    }
-
-    public void setNeighbouringEmptySpots(List<Spot> neighbouringEmptySpots) {
-        this.neighbouringEmptySpots = neighbouringEmptySpots;
-    }
-
     public List<Spot> getNeighbouringMines() {
         return neighbouringMines;
     }
@@ -34,6 +26,6 @@ public class EmptySpot extends Spot
     @Override
     public void update(Observable o, Object arg) {
         //throw new UnsupportedOperationException("Not supported yet.");
-        System.out.println(this.getPosition());
+        if(Constants.DEBUG==1)System.out.println(this.getPosition());
     }
 }

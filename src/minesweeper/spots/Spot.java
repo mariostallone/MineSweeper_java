@@ -6,6 +6,7 @@ package minesweeper.spots;
 
 import java.util.Observable;
 import java.util.Observer;
+import minesweeper.Constants;
 
 /**
  *
@@ -31,7 +32,7 @@ public abstract class Spot extends Observable implements Observer
     {
         setChanged();
         notifyObservers();
-        System.out.println("Open");
+        if(Constants.DEBUG==1)System.out.println("Open");
         this.open = open;
     }
 }

@@ -47,7 +47,8 @@ public class MineGenerator
                     }
                     else
                     {
-                        System.out.print("+   ");
+                        System.out.print("*   ");
+                        //System.out.print("+   ");--Use when Testing
                     }
                 }
                 else
