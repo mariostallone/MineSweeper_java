@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mariostallone/MineSweeper_java.png?branch=master)](https://travis-ci.org/mariostallone/MineSweeper_java)
+
 Minesweeper
 =============
 
